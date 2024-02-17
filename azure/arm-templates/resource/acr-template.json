@@ -1,0 +1,36 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceName": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "keyVault": {
+            "type": "object"
+        },
+        "containerRegistry": {
+            "type": "object"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.ContainerRegistry/registries",
+            "name": "[parameters('resourceName')]",
+            "location": "[parameters('location')]",
+            "apiVersion": "[parameters('containerRegistry').registryApiVersion]",
+            "sku": {
+                "name": "[parameters('containerRegistry').registrySku]"
+            },
+            "dependsOn": [],
+            "tags": "[parameters('containerRegistry').tags]",
+            "properties": {
+                "publicNetworkAccess": "[parameters('containerRegistry').publicNetworkAccess]",
+                "zoneRedundancy": "[parameters('containerRegistry').zoneRedundancy]"
+            }
+        }
+    ],
+    "outputs": {}
+}

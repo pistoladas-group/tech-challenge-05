@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: technews-web
+  labels:
+    role: myrole
+spec:
+  containers:
+    - name: web
+      image: tech-challenge-02-technews-web:latest
+      imagePullPolicy: Never
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
