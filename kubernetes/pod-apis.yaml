@@ -1,18 +1,35 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: tech-news-apis
+  name: technews-apis
   labels:
     role: myrole
 spec:
   containers:
-    # - name: technews-auth-api
-    #   image: tech-challenge-02-technews-auth-api:latest
-    #   imagePullPolicy: Never
-    #   ports:
-    #     - name: web
-    #       containerPort: 80
-    #       protocol: TCP
+  
+  # Auth API
+    - name: technews-auth-api
+      image: technews-auth-api:latest
+      env:
+      - name: TECHNEWS_AUTH_API_DATABASE_CONNECTION_STRING
+        value: "Server=localhost,1433;Database=TechNewsAuth;User Id=sa;Password=Pass@123;TrustServerCertificate=True; pooling=true"
+      - name: ASPNETCORE_URLS
+        value: "http://+:5138"
+      - name: TECHNEWS_AUTH_API_BROKER_HOST_NAME
+        value: "service-cluster-ip"
+      - name: TECHNEWS_AUTH_API_BROKER_VIRTUAL_HOST
+        value: "/"
+      - name: TECHNEWS_AUTH_API_BROKER_USER_NAME
+        value: "guest"
+      - name: TECHNEWS_AUTH_API_BROKER_PASSWORD
+        value: "guest"
+      - name: TECHNEWS_AUTH_API_EVENT_STORE_CONNECTION_STRING
+        value: "esdb+discover://service-cluster-ip:2113?tls=false"
+      imagePullPolicy: Never
+      ports:
+        - name: default
+          containerPort: 5138
+          protocol: TCP
   
   # Core API
     - name: technews-core-api
@@ -26,12 +43,11 @@ spec:
         value: "http://technews-auth-api:7015/jwks"
       imagePullPolicy: Never
       ports:
-        - name: core
+        - name: default
           containerPort: 5142
           protocol: TCP
 
-  # Core Database
-    - name: technews-core-database
+    - name: technews-database
       image: mcr.microsoft.com/mssql/server:2019-latest
       env:
       - name: ACCEPT_EULA
@@ -39,6 +55,6 @@ spec:
       - name: SA_PASSWORD
         value: "Pass@123"
       ports:
-        - name: database
+        - name: default
           containerPort: 1433
           protocol: TCP
