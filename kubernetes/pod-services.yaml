@@ -9,8 +9,12 @@ spec:
     - name: technews-rabbit-mq
       image: rabbitmq:management
       ports:
-        - name: default
+        - name: rabbit-ui
           containerPort: 15672
+          protocol: TCP
+
+        - name: rabbit-service
+          containerPort: 5672
           protocol: TCP
     
     - name: technews-event-store

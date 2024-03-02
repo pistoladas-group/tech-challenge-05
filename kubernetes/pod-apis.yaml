@@ -5,8 +5,8 @@ metadata:
   labels:
     role: myrole
 spec:
-  containers:
-  
+  containers: 
+
   # Auth API
     - name: technews-auth-api
       image: technews-auth-api:latest
@@ -24,7 +24,7 @@ spec:
       - name: TECHNEWS_AUTH_API_BROKER_PASSWORD
         value: "guest"
       - name: TECHNEWS_AUTH_API_EVENT_STORE_CONNECTION_STRING
-        value: "esdb+discover://service-cluster-ip:2113?tls=false"
+        value: "esdb://service-cluster-ip:2113?tls=false"
       imagePullPolicy: Never
       ports:
         - name: default
