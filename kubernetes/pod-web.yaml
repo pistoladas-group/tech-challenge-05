@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: web
-      image: tech-challenge-02-technews-web:latest
+      image: technews-web
       env:
         - name: TECHNEWS_APP_API_AUTH_URL
           value: "http://cluster-ip-apis:5138/"

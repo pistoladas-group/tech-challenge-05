@@ -19,6 +19,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\shared\TechNews.Common.Library\TechNews.Common.Library.csproj" />
+        <ProjectReference Include="..\..\shared\TechNews.Common.Library\TechNews.Common.Library.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ContentWithTargetPath Include="Email\**">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>Email\%(RecursiveDir)\%(Filename)%(Extension)</TargetPath>
+        </ContentWithTargetPath>
     </ItemGroup>
 </Project>
