@@ -1,0 +1,7 @@
+piVersion: v1
+kind: Service
+metadata:
+  name: cluster-ip-notitification
+spec:
+  selector:
+    app: technews-notification
