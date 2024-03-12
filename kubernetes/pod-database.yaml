@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: technews-database
   labels:
-    role: myrole
+    app: technews-database
 spec:
   containers:
     - name: technews-database

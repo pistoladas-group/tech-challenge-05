@@ -21,7 +21,7 @@ spec:
       image: technews-auth-api:latest
       env:
         - name: TECHNEWS_AUTH_API_DATABASE_CONNECTION_STRING
-          value: "Server=localhost,1433;Database=TechNewsAuth;User Id=sa;Password=Pass@123;TrustServerCertificate=True; pooling=true"
+          value: "Server=technews-database,1433;Database=TechNewsAuth;User Id=sa;Password=Pass@123;TrustServerCertificate=True; pooling=true"
         - name: ASPNETCORE_URLS
           value: "http://+:5138"
         - name: TECHNEWS_AUTH_API_BROKER_HOST_NAME
