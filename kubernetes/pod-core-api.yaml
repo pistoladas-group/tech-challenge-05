@@ -6,22 +6,11 @@ metadata:
     component: technews-apis
 spec:
   containers:
-    - name: technews-database
-      image: mcr.microsoft.com/mssql/server:2019-latest
-      env:
-        - name: ACCEPT_EULA
-          value: "Y"
-        - name: SA_PASSWORD
-          value: "Pass@123"
-      ports:
-        - name: default
-          containerPort: 1433
-          protocol: TCP
     - name: technews-core-api
       image: technews-core-api:latest
       env:
         - name: TECHNEWS_CORE_API_DATABASE_CONNECTION_STRING
-          value: "Server=technews-database,1433;Database=TechNews;User Id=sa;Password=Pass@123;TrustServerCertificate=True; pooling=true"
+          value: "Server=cluster-ip-database,1433;Database=TechNews;User Id=sa;Password=Pass@123;TrustServerCertificate=True; pooling=true"
         - name: ASPNETCORE_URLS
           value: "http://+:5142"
         - name: TECHNEWS_CORE_API_AUTH_JWKS_URL
