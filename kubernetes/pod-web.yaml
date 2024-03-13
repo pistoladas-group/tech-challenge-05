@@ -10,9 +10,9 @@ spec:
       image: technews-web
       env:
         - name: TECHNEWS_APP_API_AUTH_URL
-          value: "http://cluster-ip-apis:5138/"
+          value: "http://cluster-ip-apis:5138"
         - name: TECHNEWS_APP_API_CORE_URL
-          value: "http://cluster-ip-apis:5142/"
+          value: "http://cluster-ip-apis:5142"
         - name: AUTH_EXPIRATION_IN_MINUTES
           value: "20"
       imagePullPolicy: Never

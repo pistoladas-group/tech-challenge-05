@@ -31,4 +31,8 @@ spec:
           value: "1122328330939674715"
         - name: TECHNEWS_SERVICES_NOTIFICATION_DISCORD_WEBHOOK_TOKEN
           value: "niL_5e8BvqhJjH0WsLHZlSZPc_1-QjcfXE9RcqXz9CbqlnjQRICBMitMqpJsBx8fnEW9"
+        - name: TECHNEWS_SERVICES_NOTIFICATION_WEB_URL
+          value: "http://localhost:8080"
+        - name: TECHNEWS_SERVICES_NOTIFICATION_LOGO_URL
+          value: "https://tech04.blob.core.windows.net/logo/TechNews.png"
       imagePullPolicy: Never

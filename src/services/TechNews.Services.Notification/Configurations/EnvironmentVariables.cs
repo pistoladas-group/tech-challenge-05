@@ -17,7 +17,8 @@ public static class EnvironmentVariables
     public static int SmtpPort { get; private set; }
     public static string SmtpEmail { get; private set; } = string.Empty;
     public static string SmtpPassword { get; private set; } = string.Empty;
-
+    public static string WebHostAndPort = string.Empty;
+    public static string LogoUrl = string.Empty;
 
 
     public static IServiceCollection AddEnvironmentVariables(this IServiceCollection services, IHostEnvironment environment)
@@ -64,5 +65,8 @@ public static class EnvironmentVariables
 
         DiscordWebhookId = Environment.GetEnvironmentVariable("TECHNEWS_SERVICES_NOTIFICATION_DISCORD_WEBHOOK_ID");
         DiscordWebhookToken = Environment.GetEnvironmentVariable("TECHNEWS_SERVICES_NOTIFICATION_DISCORD_WEBHOOK_TOKEN");
+
+        WebHostAndPort = Environment.GetEnvironmentVariable("TECHNEWS_SERVICES_NOTIFICATION_WEB_URL") ?? string.Empty;
+        LogoUrl = Environment.GetEnvironmentVariable("TECHNEWS_SERVICES_NOTIFICATION_LOGO_URL") ?? string.Empty;
     }
 }
