@@ -127,7 +127,7 @@ public class AccountController : ControllerBase
 
         var token = tokenHandler.CreateToken(new SecurityTokenDescriptor
         {
-            Issuer = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.Value}", // TODO: Colocar em um environment variable
+            Issuer = EnvironmentVariables.IssuerName,
             Subject = claims,
             Expires = DateTime.UtcNow.AddMinutes(EnvironmentVariables.TokenExpirationInMinutes),
             TokenType = tokenType,

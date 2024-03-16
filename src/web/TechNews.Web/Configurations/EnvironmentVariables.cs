@@ -44,10 +44,10 @@ public static class EnvironmentVariables
         ApiAuthBaseUrl = Environment.GetEnvironmentVariable("TECHNEWS_APP_API_AUTH_URL");
         ApiCoreBaseUrl = Environment.GetEnvironmentVariable("TECHNEWS_APP_API_CORE_URL");
         
-        DiscordWebhookId = Environment.GetEnvironmentVariable("TECHNEWS_AUTH_API_DISCORD_WEBHOOK_ID");
-        DiscordWebhookToken = Environment.GetEnvironmentVariable("TECHNEWS_AUTH_API_DISCORD_WEBHOOK_TOKEN");
+        DiscordWebhookId = Environment.GetEnvironmentVariable("TECHNEWS_APP_API_DISCORD_WEBHOOK_ID");
+        DiscordWebhookToken = Environment.GetEnvironmentVariable("TECHNEWS_APP_API_DISCORD_WEBHOOK_TOKEN");
 
-        int.TryParse(Environment.GetEnvironmentVariable("AUTH_EXPIRATION_IN_MINUTES"), out var parsedExpiration);
+        int.TryParse(Environment.GetEnvironmentVariable("TECHNEWS_APP_AUTH_EXPIRATION_IN_MINUTES"), out var parsedExpiration);
         AuthExpirationInMinutes = parsedExpiration;
 
         if (parsedExpiration == 0)

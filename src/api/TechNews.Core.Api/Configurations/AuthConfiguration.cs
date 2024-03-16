@@ -45,7 +45,7 @@ public static class AuthConfiguration
                 options.TokenValidationParameters.ClockSkew = TimeSpan.Zero;
 
                 var jwksUri = new Uri(retrievalUrl);
-                options.TokenValidationParameters.ValidIssuer = $"{jwksUri.Scheme}://{jwksUri.Authority}"; // TODO: Colocar em um environment variable
+                options.TokenValidationParameters.ValidIssuer = EnvironmentVariables.AuthIssuer;
             });
 
         return services;

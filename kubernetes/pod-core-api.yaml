@@ -15,6 +15,8 @@ spec:
           value: "http://+:5142"
         - name: TECHNEWS_CORE_API_AUTH_JWKS_URL
           value: "http://cluster-ip-apis:5138/jwks"
+        - name: TECHNEWS_CORE_API_AUTH_ISSUER
+          value: "technews-auth-api"
       imagePullPolicy: Never
       ports:
         - name: default

@@ -23,6 +23,8 @@ spec:
           value: "guest"
         - name: TECHNEWS_AUTH_API_EVENT_STORE_CONNECTION_STRING
           value: "esdb://cluster-ip-services:2113?tls=false"
+        - name: TECHNEWS_AUTH_API_ISSUER_NAME
+          value: "technews-auth-api"
       imagePullPolicy: Never
       ports:
         - name: default
