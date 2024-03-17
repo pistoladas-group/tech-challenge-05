@@ -40,6 +40,8 @@
     - [Testes de Integração](#testes-de-integração)
     - [Testes de UI/UAT (Interface/Aceitação do Usuário)](#testes-de-uiuat-interfaceaceitação-do-usuário)
 - [CI / CD](#ci--cd)
+- [Mensageria](#mensageria)
+- [Kubernetes](#kubernetes)
 - [Executando a aplicação](#executando-a-aplicação)
     - [Docker](#docker)
 
@@ -253,6 +255,16 @@ Abaixo um exemplo de uma Exchange de "UserRegisteredEvent" redirecionando mensag
 <p align="center">
   <a href="">
     <img src=".github\images\exchanges-and-queues.gif" alt="exchanges-and-queues">
+  </a>
+</p>
+
+# Kubernetes
+
+Abaixo a representação do Cluster Kubernetes do TechNews.
+
+<p align="center">
+  <a href="">
+    <img src="docs\cluster-kubernetes.jpg" alt="cluster-kubernetes">
   </a>
 </p>
 
